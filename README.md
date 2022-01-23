@@ -1,9 +1,9 @@
-# file-concat
-Simple node package to combine multiple files into one.
+# simple-file-concat
+Small node package to combine multiple files into one.
 
 ## Import into your project
 ```js
-const fc = require('file-concat');
+const fc = require('simple-file-concat');
 ```
 
 ## Documentation
