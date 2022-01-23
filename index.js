@@ -8,11 +8,11 @@ function getPath(dir, file) {
 
 function concat(dir, outputFile, config) {
 
-	const outputFilePath = getPath(dir, outputFile);
+	const outputFilePath = config.outputDir ? getPath(__dirname, outputFile) : getPath(dir, outputFile);
 
 	// Delete output file if it already exists
-	if (fs.existsSync(file)) {
-		fs.unlinkSync(file);
+	if (fs.existsSync(outputFilePath)) {
+		fs.unlinkSync(outputFilePath);
 	}
 
 	// Read the name of each file in the directory
@@ -25,8 +25,11 @@ function concat(dir, outputFile, config) {
 	});
 
 	// Move the output if a different output directory has been specified
-	if (config.outputDir) {
-		fs.renameSync(outputFilePath, getPath(config.outputDir, outputFile););
+	if (config.outputDir && fs.existsSync(outputFilePath)) {
+		if (!fs.existsSync(config.outputDir)){
+    		fs.mkdirSync(config.outputDir, { recursive: true });
+		}
+		fs.renameSync(outputFilePath, getPath(config.outputDir, outputFile));
 	}
 
 }

@@ -1,11 +1,19 @@
 {
-  "name": "file-concat",
-  "version": "1.0.0",
+  "name": "simple-file-concat",
+  "version": "1.0.6",
   "description": "Combine files into one output file",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dominic Lees",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DominicLees/file-concat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DominicLees/file-concat/issues"
+  },
+  "homepage": "https://github.com/DominicLees/file-concat#readme"
 }
